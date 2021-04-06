@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.Hashtable;
 
+import static fr.cned.emdsgil.suividevosfrais.Global.getListFraisMoisMaj;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -86,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
     private void cmdTransfert_clic() {
         findViewById(R.id.cmdTransfert).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
+                findViewById(R.id.cmdTransfert).setOnClickListener(new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        //Si aucune modification n'a été effectuée
+                        if(getListFraisMoisMaj().size() == 0){
+                            Toast.makeText(MainActivity.this, "Aucune modification. Avez-vous effectué des modifications?", Toast.LENGTH_LONG);
+                        }
+                        //Sinon
+                        else{
+                            Global.UpdateFrais(getListFraisMoisMaj());
+                        }
+                    }
+                });
             }
         });
 

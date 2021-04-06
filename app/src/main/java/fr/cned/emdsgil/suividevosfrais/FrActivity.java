@@ -66,7 +66,7 @@ public class FrActivity extends AppCompatActivity {
 		qte = 0 ;
 		Integer key = annee*100+mois ;
 		if (Global.listFraisMois.containsKey(key)) {
-			qte = Global.listFraisMois.get(key).getKm() ;
+			qte = Global.listFraisMois.get(key).getRepas() ;
 		}
 		((EditText)findViewById(R.id.txtFr)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
 	}
@@ -95,24 +95,24 @@ public class FrActivity extends AppCompatActivity {
     }
     
     /**
-     * Sur le clic du bouton plus : ajout de 1 dans la quantité
+     * Sur le clic du bouton plus : ajout de 10 dans la quantité
      */
     private void cmdPlus_clic() {
     	findViewById(R.id.cmdFrPlus).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
-    			qte+=1 ;
+    			qte+=10 ;
     			enregNewQte() ;
     		}
     	}) ;    	
     }
     
     /**
-     * Sur le clic du bouton moins : enlève 1 dans la quantité si c'est possible
+     * Sur le clic du bouton moins : enlève 10 dans la quantité si c'est possible
      */
     private void cmdMoins_clic() {
     	findViewById(R.id.cmdFrMoins).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
-   				qte = Math.max(0, qte-1) ; // suppression de 10 si possible
+   				qte = Math.max(0, qte-10) ; // suppression de 10 si possible
     			enregNewQte() ;
      		}
     	}) ;    	

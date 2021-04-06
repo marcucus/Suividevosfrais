@@ -97,26 +97,26 @@ public class KmActivity extends AppCompatActivity {
     /**
      * Sur le clic du bouton plus : ajout de 10 dans la quantité
      */
-    private void cmdPlus_clic() {
-    	findViewById(R.id.cmdKmPlus).setOnClickListener(new Button.OnClickListener() {
-    		public void onClick(View v) {
-    			qte+=10 ;
-    			enregNewQte() ;
-    		}
-    	}) ;    	
-    }
+	private void cmdPlus_clic() {
+		findViewById(R.id.cmdKmPlus).setOnClickListener(new Button.OnClickListener() {
+			public void onClick(View v) {
+				qte+=10 ;
+				enregNewQte() ;
+			}
+		}) ;
+	}
     
     /**
      * Sur le clic du bouton moins : enlève 10 dans la quantité si c'est possible
      */
-    private void cmdMoins_clic() {
-    	findViewById(R.id.cmdKmMoins).setOnClickListener(new Button.OnClickListener() {
-    		public void onClick(View v) {
-   				qte = Math.max(0, qte-10) ; // suppression de 10 si possible
-    			enregNewQte() ;
-     		}
-    	}) ;    	
-    }
+	private void cmdMoins_clic() {
+		findViewById(R.id.cmdKmMoins).setOnClickListener(new Button.OnClickListener() {
+			public void onClick(View v) {
+				qte = Math.max(0, qte-10) ; // suppression de 10 si possible
+				enregNewQte() ;
+			}
+		}) ;
+	}
     
     /**
      * Sur le changement de date : mise à jour de l'affichage de la qte

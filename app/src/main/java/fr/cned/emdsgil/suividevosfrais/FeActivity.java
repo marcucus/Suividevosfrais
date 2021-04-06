@@ -66,7 +66,7 @@ public class FeActivity extends AppCompatActivity {
 		qte = 0 ;
 		Integer key = annee*100+mois ;
 		if (Global.listFraisMois.containsKey(key)) {
-			qte = Global.listFraisMois.get(key).getKm() ;
+			qte = Global.listFraisMois.get(key).getEtape() ;
 		}
 		((EditText)findViewById(R.id.txtFe)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
 	}
@@ -100,7 +100,7 @@ public class FeActivity extends AppCompatActivity {
     private void cmdPlus_clic() {
     	findViewById(R.id.cmdFePlus).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
-    			qte+=1 ;
+    			qte+=10 ;
     			enregNewQte() ;
     		}
     	}) ;    	
@@ -112,7 +112,7 @@ public class FeActivity extends AppCompatActivity {
     private void cmdMoins_clic() {
     	findViewById(R.id.cmdFeMoins).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
-   				qte = Math.max(0, qte-1) ; // suppression de 10 si possible
+   				qte = Math.max(0, qte-10) ; // suppression de 10 si possible
     			enregNewQte() ;
      		}
     	}) ;    	
